@@ -1,0 +1,103 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+abbr,
+address,
+b,
+blockquote,
+cite,
+code,
+del,
+dfn,
+em,
+i,
+kbd,
+mark,
+pre,
+q,
+ruby,
+s,
+samp,
+small,
+strong,
+sub,
+sup,
+tt,
+time,
+u,
+var,
+form,
+label,
+fieldset,
+legend,
+output,
+iframe,
+img,
+canvas,
+figcaption,
+figure,
+audio,
+video,
+a,
+nav,
+menu,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+th,
+tr,
+td,
+div,
+span,
+hgroup,
+header,
+main,
+footer,
+section,
+article,
+aside,
+summary,
+details {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
