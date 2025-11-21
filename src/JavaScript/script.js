@@ -1,3 +1,7 @@
+// Dependencies
+const express = require("express");
+const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
 // State Management
 const participants = [];
 // DOM Elements
