@@ -56,7 +56,6 @@ app.post("/api/assignments", async (req, res) => {
       emailTextTemplate,
     } = req.body;
     const pairs = sortSecretSanta(participants);
-    console.log(pairs);
     if (sendEmails) {
       const transporter = createTransporter();
       const subject = emailSubject || "Your Secret Santa Assignment";
