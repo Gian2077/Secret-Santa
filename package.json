@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Gian2077/Secret-Santa#readme",
   "dependencies": {
     "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "nodemailer": "^7.0.10"
