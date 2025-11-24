@@ -2,28 +2,8 @@
 const participants = [];
 // DOM Elements
 const form = document.getElementsByTagName("form")[0];
-// Functions
-function sortSecretSanta(participants) {
-  let assignments = [...participants];
-  let isInvalid = true;
-  while (isInvalid) {
-    // Fisher-Yates Shuffle
-    assignments = assignments
-      .map((value) => ({ value, sort: Math.random() }))
-      .sort((a, b) => a.sort - b.sort)
-      .map((obj) => obj.value);
-    isInvalid = participants.some(
-      (participant, i) => participant === assignments[i]
-    );
-  }
-  const result = participants.map((giver, i) => ({
-    giver,
-    receiver: assignments[i],
-  }));
-  return result;
-}
 // Event Listeners
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const participant1 = {
     name: form.participant1Name.value,
@@ -37,25 +17,18 @@ form.addEventListener("submit", (event) => {
     name: form.participant3Name.value,
     email: form.participant3Email.value,
   };
-  const participant4 = {
-    name: form.participant4Name.value,
-    email: form.participant4Email.value,
-  };
-  const participant5 = {
-    name: form.participant5Name.value,
-    email: form.participant5Email.value,
-  };
-  const participant6 = {
-    name: form.participant6Name.value,
-    email: form.participant6Email.value,
-  };
-  participants.push(
-    participant1,
-    participant2,
-    participant3,
-    participant4,
-    participant5,
-    participant6
-  );
-  console.log(sortSecretSanta(participants));
+  participants.push(participant1, participant2, participant3);
+  try {
+    const response = await fetch("http://localhost:3000/api/assignments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ participants, sendEmails: true }),
+    });
+    const data = await response.json();
+    console.log("Server Response:", data);
+  } catch (error) {
+    console.log("Error:", error.message);
+  }
 });
