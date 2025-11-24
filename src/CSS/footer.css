@@ -1,0 +1,14 @@
+footer {
+  background-color: var(--background-color-footer);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  padding: var(--padding-m);
+}
+#developer {
+  grid-column: 2;
+  justify-self: center;
+}
+#version {
+  grid-column: 3;
+  justify-self: end;
+}

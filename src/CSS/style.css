@@ -9,3 +9,26 @@
   box-sizing: border-box;
   color: var(--color-text);
 }
+body {
+  background-color: var(--background-color-body);
+  display: grid;
+  font-family: var(--font-family);
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  max-height: 100%;
+  max-width: 100%;
+  width: 100vw;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-title);
+  font-weight: 700;
+}
+h1 {
+  font-size: var(--font-size-3xl);
+  text-align: center;
+}
